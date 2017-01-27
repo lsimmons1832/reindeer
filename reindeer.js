@@ -5,14 +5,16 @@ var reindeer = ["Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donne
 var hohohoElement = document.getElementById("coloredReindeer");
 
 // Your task is to loop through all the reindeer in the array
+// add the name of the reindeer to the single HTML <div> element provided. 
+// The name of the reindeer should be prepended with the corresponding color from the other array.
 var list = hohohoElement.innerHTML;
 list += "<ul>";
-for (var i = 0; i < reindeer.length; i++) {
-	list += "<li>" + colors[i] + " " + reindeer[i] +"</li>";
+for (var i = 0; i < colors.length; i++) {
+	for (var j = 0; j < reindeer.length; j++) {
+		if (i === j) {
+			list += "<li>" + colors[i] + " " + reindeer[j] +"</li>";
+		}
+	}
 }
 list += "</ul>";
 hohohoElement.innerHTML = list;
-console.log()
-//add the name of the reindeer to the single HTML <div> element provided. 
-// The name of the reindeer should be prepended with the corresponding color from the other array.
-
